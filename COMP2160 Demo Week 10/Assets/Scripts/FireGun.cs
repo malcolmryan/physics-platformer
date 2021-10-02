@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FireGun : MonoBehaviour
 {
+    private Vector2 aim = Vector2.zero;
+
     void Start()
     {
         
@@ -13,12 +15,20 @@ public class FireGun : MonoBehaviour
     {
         float dx = Input.GetAxis(InputAxes.GunHorizontal);
         float dy = Input.GetAxis(InputAxes.GunVertical);
-        Vector2 aim = new Vector2(dx, dy);
+        aim = new Vector2(dx, dy);
 
-        if (dx != 0 && dy != 0)
+        if (dx != 0 || dy != 0)
         {
-            float angle = Vector2.Angle(Vector2.right, aim);
+            float angle = Mathf.Rad2Deg * Mathf.Atan2(dy, dx);
             transform.localRotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
+
+    private void OnDrawGizmos() 
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position, transform.position + (Vector3)aim);    
+    }
+
 }
+
