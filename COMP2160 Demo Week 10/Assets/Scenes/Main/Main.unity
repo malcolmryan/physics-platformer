@@ -454,22 +454,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2100140363, guid: 69e8930aae669324e8ede18175b42246, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2100140363, guid: 69e8930aae669324e8ede18175b42246, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Keyboard
-      objectReference: {fileID: 0}
-    - target: {fileID: 2100140363, guid: 69e8930aae669324e8ede18175b42246, type: 3}
-      propertyPath: m_NotificationBehavior
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2498797462073026515, guid: 69e8930aae669324e8ede18175b42246, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3391972063002365300, guid: 69e8930aae669324e8ede18175b42246, type: 3}
       propertyPath: m_RootOrder
       value: 2

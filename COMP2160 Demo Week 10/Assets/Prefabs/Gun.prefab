@@ -122,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1904216583719676979}
   - component: {fileID: 3854965257256721076}
-  - component: {fileID: -7506914028019961968}
   m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
@@ -160,33 +159,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0.2
   rocketPrefab: {fileID: 4304069299007932195, guid: c66c64ff2c26b984ca5be1e0ee941a7d, type: 3}
---- !u!114 &-7506914028019961968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1904216583719676976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 8091dd687a97a43488caf08ba2a12bed, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}

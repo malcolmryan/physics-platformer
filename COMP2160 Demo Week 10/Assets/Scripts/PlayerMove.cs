@@ -11,12 +11,17 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private float jumpImpulse = 10;
     [SerializeField]
-    private float dragCoefficient = 1;
-
-
+    private float fireImpulse = 10;
+    [SerializeField]
+    private AnimationCurve explosinImpulse;
+    
     private new Rigidbody2D rigidbody;
     private float movement;
     private bool jump = false;
+    private bool fire = false;
+    private Vector3 fireDirection = Vector3.zero;
+    private bool explode = false;
+    private Vector3 explodeDirection = Vector3.zero;
 
     void Start()
     {
@@ -28,15 +33,24 @@ public class PlayerMove : MonoBehaviour
         Vector3 drive = movement * moveForce * Vector3.right;
         rigidbody.AddForce(drive);
 
-        Vector3 velocity = rigidbody.velocity;
-        Vector3 drag = -velocity * dragCoefficient;
-        drag.y = 0;
-        rigidbody.AddForce(drag);
-
         if (jump)
         {
             rigidbody.AddForce(Vector3.up * jumpImpulse, ForceMode2D.Impulse);
             jump = false;
+        }
+
+        if (fire) 
+        {
+            rigidbody.AddForce(-fireDirection.normalized * fireImpulse, ForceMode2D.Impulse);
+            fire = false;
+        }
+
+        if (explode)
+        {
+            float impulse = explosinImpulse.Evaluate(explodeDirection.magnitude);
+            Debug.Log($"Explosion impulse = {impulse}");
+            rigidbody.AddForce(explodeDirection.normalized * impulse, ForceMode2D.Impulse);
+            explode = false;
         }
     }
 
@@ -50,4 +64,16 @@ public class PlayerMove : MonoBehaviour
         jump = true;
     }
 
+    public void Fire(Vector3 direction)
+    {
+        fire = true;
+        fireDirection = direction;
+    }
+
+    public void Explode(Vector3 direction)
+    {
+        Debug.Log($"Explode({direction})");
+        explode = true;
+        explodeDirection = direction;
+    }
 }

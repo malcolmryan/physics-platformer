@@ -9,12 +9,17 @@ public class FireGun : MonoBehaviour
     private float cooldown = 0.2f;
     [SerializeField]
     private Rocket rocketPrefab;
+
+
     private Transform firePoint;
     private float cooldownTimer = 0;
+
+    private PlayerMove player;
 
     void Start()
     {
         firePoint = transform.Find("Fire");
+        player = FindObjectOfType<PlayerMove>();
     }
 
     void Update()
@@ -30,6 +35,9 @@ public class FireGun : MonoBehaviour
             rocket.transform.position = firePoint.position;
             rocket.transform.rotation = firePoint.rotation;
             cooldownTimer = cooldown;
+
+            // push back on the player
+            player.Fire(firePoint.right);
         }
     }
 
