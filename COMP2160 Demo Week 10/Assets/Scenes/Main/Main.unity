@@ -1865,6 +1865,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2498797462073026515, guid: 69e8930aae669324e8ede18175b42246, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2498797462073026515, guid: 69e8930aae669324e8ede18175b42246, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2498797462073026515, guid: 69e8930aae669324e8ede18175b42246, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: 648020ad-d483-46ed-a142-c52663146a9b
+      objectReference: {fileID: 0}
+    - target: {fileID: 2498797462073026515, guid: 69e8930aae669324e8ede18175b42246, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 3b16ad0c-a239-43c2-947a-f07b0df9f863
+      objectReference: {fileID: 0}
+    - target: {fileID: 2498797462073026515, guid: 69e8930aae669324e8ede18175b42246, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: Player/Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 2498797462073026515, guid: 69e8930aae669324e8ede18175b42246, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: Player/Aim
+      objectReference: {fileID: 0}
+    - target: {fileID: 2498797462073026515, guid: 69e8930aae669324e8ede18175b42246, type: 3}
+      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2498797462073026515, guid: 69e8930aae669324e8ede18175b42246, type: 3}
+      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2498797462073026515, guid: 69e8930aae669324e8ede18175b42246, type: 3}
+      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3391972063002365300, guid: 69e8930aae669324e8ede18175b42246, type: 3}
       propertyPath: m_RootOrder
       value: 2

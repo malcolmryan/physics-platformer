@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FireGun : MonoBehaviour
 {
@@ -13,15 +14,6 @@ public class FireGun : MonoBehaviour
 
     void Update()
     {
-        float dx = Input.GetAxis(InputAxes.GunHorizontal);
-        float dy = Input.GetAxis(InputAxes.GunVertical);
-        aim = new Vector2(dx, dy);
-
-        if (dx != 0 || dy != 0)
-        {
-            float angle = Mathf.Rad2Deg * Mathf.Atan2(dy, dx);
-            transform.localRotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        }
     }
 
     private void OnDrawGizmos() 
@@ -30,5 +22,20 @@ public class FireGun : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + (Vector3)aim);    
     }
 
+    public void OnFire(InputValue value)
+    {
+
+    }
+
+    public void OnAim(InputValue value)
+    {
+        aim = value.Get<Vector2>();
+
+        if (aim.x != 0 || aim.  y != 0)
+        {
+            float angle = Mathf.Rad2Deg * Mathf.Atan2(aim.y, aim.x);
+            transform.localRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+    }
 }
 
