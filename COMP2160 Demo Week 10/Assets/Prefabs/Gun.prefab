@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccec81cd5f7630543b3d3daba3ee069d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0.2
   rocketPrefab: {fileID: 4304069299007932195, guid: c66c64ff2c26b984ca5be1e0ee941a7d, type: 3}
 --- !u!114 &-7506914028019961968
 MonoBehaviour:
