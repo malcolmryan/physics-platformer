@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1904216582758315563}
   - component: {fileID: 1904216582758315562}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1904216583504921328}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 1904216583719676979}
   - component: {fileID: 3854965257256721076}
   - component: {fileID: -7506914028019961968}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccec81cd5f7630543b3d3daba3ee069d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rocketPrefab: {fileID: 4304069299007932195, guid: c66c64ff2c26b984ca5be1e0ee941a7d, type: 3}
 --- !u!114 &-7506914028019961968
 MonoBehaviour:
   m_ObjectHideFlags: 0
