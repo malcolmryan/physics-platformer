@@ -8,9 +8,15 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField]
     private float moveForce = 10;
+    [SerializeField]
+    private float jumpImpulse = 10;
+    [SerializeField]
     private float dragCoefficient = 1;
+
+
     private new Rigidbody2D rigidbody;
     private float movement;
+    private bool jump = false;
 
     void Start()
     {
@@ -24,8 +30,14 @@ public class PlayerMove : MonoBehaviour
 
         Vector3 velocity = rigidbody.velocity;
         Vector3 drag = -velocity * dragCoefficient;
+        drag.y = 0;
         rigidbody.AddForce(drag);
 
+        if (jump)
+        {
+            rigidbody.AddForce(Vector3.up * jumpImpulse, ForceMode2D.Impulse);
+            jump = false;
+        }
     }
 
     void OnMove(InputValue value)
@@ -34,8 +46,8 @@ public class PlayerMove : MonoBehaviour
     }
 
     void OnJump(InputValue value)
-    {
-
+    {   
+        jump = true;
     }
 
 }
