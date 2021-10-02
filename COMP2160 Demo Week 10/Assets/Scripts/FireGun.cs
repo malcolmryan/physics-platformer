@@ -6,8 +6,11 @@ using UnityEngine.InputSystem;
 public class FireGun : MonoBehaviour
 {
     [SerializeField]
+    private float cooldown = 0.2f;
+    [SerializeField]
     private Rocket rocketPrefab;
     private Transform firePoint;
+    private float cooldownTimer = 0;
 
     void Start()
     {
@@ -16,13 +19,18 @@ public class FireGun : MonoBehaviour
 
     void Update()
     {
+        cooldownTimer = Mathf.Max(0, cooldownTimer - Time.deltaTime);
     }
 
     public void OnFire(InputValue value)
     {
-        Rocket rocket = Instantiate(rocketPrefab);
-        rocket.transform.position = firePoint.position;
-        rocket.transform.rotation = firePoint.rotation;
+        if (cooldownTimer <= 0)
+        {
+            Rocket rocket = Instantiate(rocketPrefab);
+            rocket.transform.position = firePoint.position;
+            rocket.transform.rotation = firePoint.rotation;
+            cooldownTimer = cooldown;
+        }
     }
 
     public void OnAim(InputValue value)
