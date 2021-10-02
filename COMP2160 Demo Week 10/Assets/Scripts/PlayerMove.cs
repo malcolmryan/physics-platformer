@@ -14,7 +14,11 @@ public class PlayerMove : MonoBehaviour
     private float fireImpulse = 10;
     [SerializeField]
     private AnimationCurve explosinImpulse;
-    
+    [SerializeField]
+    private LayerMask groundLayer;
+    [SerializeField]
+    private float maxGroundDistance = 1;
+
     private new Rigidbody2D rigidbody;
     private float movement;
     private bool jump = false;
@@ -48,10 +52,15 @@ public class PlayerMove : MonoBehaviour
         if (explode)
         {
             float impulse = explosinImpulse.Evaluate(explodeDirection.magnitude);
-            Debug.Log($"Explosion impulse = {impulse}");
             rigidbody.AddForce(explodeDirection.normalized * impulse, ForceMode2D.Impulse);
             explode = false;
         }
+    }
+
+    private bool IsOnGround()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, maxGroundDistance, groundLayer);
+        return hit.collider != null;
     }
 
     void OnMove(InputValue value)
@@ -61,7 +70,10 @@ public class PlayerMove : MonoBehaviour
 
     void OnJump(InputValue value)
     {   
-        jump = true;
+        if (IsOnGround())
+        {
+            jump = true;
+        }
     }
 
     public void Fire(Vector3 direction)
@@ -72,8 +84,13 @@ public class PlayerMove : MonoBehaviour
 
     public void Explode(Vector3 direction)
     {
-        Debug.Log($"Explode({direction})");
         explode = true;
         explodeDirection = direction;
+    }
+
+    private void OnDrawGizmos() 
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawLine(transform.position, transform.position + maxGroundDistance * Vector3.down);    
     }
 }
