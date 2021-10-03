@@ -48,7 +48,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 2
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 84597fc95dbeb4c469cb70f909c495ea, type: 2}
@@ -68,8 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31547f24ab45e804d93bc8fc954969d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 50
-  jumpImpulse: 5
+  moveForce: 20
+  jumpImpulse: 6
   fireImpulse: 2
   explosinImpulse:
     serializedVersion: 2

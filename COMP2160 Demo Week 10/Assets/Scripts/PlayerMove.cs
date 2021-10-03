@@ -7,7 +7,10 @@ using UnityEngine.InputSystem;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField]
-    private float moveForce = 10;
+    private float groundMoveForce = 20;
+    [SerializeField]
+    private float airMoveForce = 10;
+
     [SerializeField]
     private float jumpImpulse = 10;
     [SerializeField]
@@ -34,7 +37,7 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 drive = movement * moveForce * Vector3.right;
+        Vector3 drive = movement * (IsOnGround() ? groundMoveForce : airMoveForce) * Vector3.right;
         rigidbody.AddForce(drive);
 
         if (jump)
