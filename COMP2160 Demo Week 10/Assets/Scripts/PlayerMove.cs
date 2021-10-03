@@ -35,10 +35,28 @@ public class PlayerMove : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
+    // Mathf.Sign returns 1 for x == 0
+    private float Sign(float x)
+    {
+        if (x == 0)
+        {
+            return 0;
+        }
+        else if (x > 0)
+        {
+            return 1;
+        }
+        else 
+        {
+            return -1;
+        }
+    }
+
     void FixedUpdate()
     {
-        Vector3 drive = movement * (IsOnGround() ? groundMoveForce : airMoveForce) * Vector3.right;
-        rigidbody.AddForce(drive);
+        float vx = rigidbody.velocity.x;
+        float drive = (IsOnGround() ? groundMoveForce : airMoveForce);
+        rigidbody.AddForce(drive * movement * Vector3.right);
 
         if (jump)
         {

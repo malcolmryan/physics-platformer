@@ -68,7 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31547f24ab45e804d93bc8fc954969d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 20
+  groundMoveForce: 10
+  airMoveForce: 20
   jumpImpulse: 6
   fireImpulse: 2
   explosinImpulse:
